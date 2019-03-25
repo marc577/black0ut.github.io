@@ -1,0 +1,14 @@
+<nav id="navbar" class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+        {% for p in site.data.navigation %}
+        <li class="
+          {% if p.url == '/' %}
+            {% if page.url == '/' %}current{% endif %}
+          {% else %}
+            {% if page.url contains p.link %}current{% endif %}
+          {% endif %}">
+          <a href="{{ p.url }}">{{ p.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>

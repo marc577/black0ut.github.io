@@ -1,1 +1,23 @@
-theme: jekyll-theme-hacker
+# Site settings
+title: black0ut.dev
+email: me@black0ut.dev
+author: black0ut
+description: 
+baseurl: https://blackout.dev
+repository: marc577/Prog_GoProject
+
+# Build settings
+permalink: :title/
+sass:
+  sass_dir: assets/css
+  markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-avatar
+  - jekyll-redirect-from
+  - jemoji
+  - jekyll-mentions
+  - jekyll-include-cache
+  - jekyll-github-metadata
