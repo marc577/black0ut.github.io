@@ -2,15 +2,16 @@
 title: black0ut.dev
 email: me@black0ut.dev
 author: black0ut
-description: 
+description: ""
 baseurl: https://blackout.dev
 repository: marc577/Prog_GoProject
+google_analytics: ""
 
 # Build settings
 permalink: :title/
 sass:
   sass_dir: assets/css
-  markdown: kramdown
+markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
