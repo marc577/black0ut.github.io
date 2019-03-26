@@ -1,13 +1,11 @@
-- title: Home
+- title: home
   url: /
-- title: Blog
+- title: blog
   url: /blog
-- title: Team
-  url: /team.html
-- title: Contact
+- title: projects
+  url: /projects
+- title: contact
   url: /contact.html
-- title: Store
-  url: /store.html
 - title: Support
   url: /support.html
   sublinks:
