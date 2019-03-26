@@ -3,7 +3,13 @@ layout: default
 url: projects.html
 title: projects
 ---
-<h1 class="text-primary">projects done.</h1>
+<h1 class="text-primary">public projects done.</h1>
 {% for repository in site.github.public_repositories %}
-  * [{{ repository.name }}]({{ repository.html_url }})
+  <h2 class="text-primary">{{ repository.name }}</h2>
+  <a href="{{ repository.html_url }}">Link</a>
+  <h3 class="text-primary">latest commits</h3>
+  {% for commit in repository.commits %}
+  {{ commit.name }}
+  {% endfor %}
+  
 {% endfor %}
