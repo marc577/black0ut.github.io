@@ -8,8 +8,6 @@ title: projects
   <h2 class="text-primary">{{ repository.name }}</h2>
   <a href="{{ repository.html_url }}">Link</a>
   <h3 class="text-primary">latest commits</h3>
-  {% for commit in repository.commits %}
-  {{ commit.name }}
-  {% endfor %}
+  {{ repository }}
   
 {% endfor %}
