@@ -12,6 +12,7 @@ group :jekyll_plugins do
     gem 'jekyll-mentions', '~> 1.4.1'
     gem 'jekyll-redirect-from', '~> 0.14.0'
     gem 'jekyll-github-metadata', '~> 2.12.1'
+    gem 'jekyll-get-json', '~> 0.0.1'
   end
   
   # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -21,4 +22,4 @@ group :jekyll_plugins do
   gem "wdm", "~> 0.1.0" if Gem.win_platform?
   
 
-gem 'github-pages', group: :jekyll_plugins
+gem 'github-pages'

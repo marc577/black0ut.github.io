@@ -1,14 +1,37 @@
 ---
 layout: default
-url: projects.html
-title: projects
+title: projects.
 ---
 <h1 class="text-primary">public projects done.</h1>
 {% for repository in site.github.public_repositories %}
   <h2 class="text-primary">{{ repository.name }}</h2>
   <a href="{{ repository.html_url }}">Link</a>
-  
+
   <h3 class="text-primary">latest commits</h3>
-  {{ repository }}
-  
+  {{ repository.commits_url }}    
 {% endfor %}
+<ul id="user"></ul>
+
+<script src="../assets/js/gh3.min.js"></script>
+<script>
+
+    var k33g = new Gh3.User("marc577");
+    var userInfos = $("#user");
+
+    k33g.fetch(function (err, resUser){
+
+    if(err) {
+       throw "outch ..."
+    }
+
+    console.log(k33g, resUser);
+
+    _.each(_.keys(resUser), function (prop) {
+       $('#user').append(
+       $('<li>').append(prop+" : "+resUser[prop])
+       );
+    });
+
+      });
+
+    </script>
