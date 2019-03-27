@@ -5,7 +5,7 @@ title: projects.
 <h1 class="text-primary">public projects done.</h1>
 {% for repository in site.github.public_repositories %}
 <div class="card text-white bg-secondary mb-3">
-        <div class="card-header"><a href="{{ repository.html_url }}">show on GitHub.</a></div>
+        <div class="card-header"><a href="{{ repository.html_url }}">view on GitHub.</a></div>
         <div class="card-body">
           <h4 class="card-title">{{ repository.name }}.</h4>
           <p class="card-text">
@@ -29,7 +29,7 @@ title: projects.
               </ul>
               <div id="myTabContent" class="tab-content">
                 <div class="tab-pane fade show active" id="home">
-                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                    <p id="projectReadme"></p>
                     <!-- watch project -->
                     <a class="github-button" href="{{ repository.html_url }}/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch {{ repository.name }} on GitHub">Watch</a>
                     <!-- star project -->
@@ -50,7 +50,16 @@ title: projects.
                 </div>
               </div></p>
         </div>
-      </div>  
+      </div>
+<script>
+    var converter = new showdown.Converter();
+    $.ajax({
+        url: "https://raw.githubusercontent.com/{{ repository.full_name }}/master/README.md",
+        success: function (data) {
+            $('#projectReadme').append(converter.makeHtml(data));
+        }
+      });
+</script>        
 {% endfor %}
 <ul id="user"></ul>
 
