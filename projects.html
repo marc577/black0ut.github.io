@@ -15,16 +15,16 @@ title: projects.
 <script src="../assets/js/gh3.min.js"></script>
 <script>
 
-    var k33g = new Gh3.User("marc577");
+    var b0ut = new Gh3.User("marc577");
     var userInfos = $("#user");
 
-    k33g.fetch(function (err, resUser){
+    b0ut.fetch(function (err, resUser){
 
     if(err) {
        throw "outch ..."
     }
 
-    console.log(k33g, resUser);
+    console.log(b0ut, resUser);
 
     _.each(_.keys(resUser), function (prop) {
        $('#user').append(
