@@ -1,19 +1,19 @@
 ---
 layout: default
-title: about.
+title: start.
 ---
-<h1 class="text-primary">about me.</h1>
+<h1 class="text-primary">{{ page.title }}</h1>
 <div class="jumbotron">
-    <h1 class="display-3">{{ site.github.owner_name }}</h1>
+    <h3>{{ site.github.owner_name }}</h3>
     <div class="container">
         <div class="row">
             <div class="col-md-auto">
                 <img style=" width: 50%; display: block;" src="{{site.github.owner_gravatar_url}}" alt="Card image">   
             </div>
             <div class="col">
-                    <p class="lead" id="name"></p>
+                    <p class="lead text-primary" id="name"></p>
                     <p id="blog"></p>
-                    <p id="mail"></p>
+                    <p id="email"></p>
                     <p id="company"></p>
                     <p id="loc"></p>
                     <hr class="my-4">
@@ -47,4 +47,4 @@ title: about.
 
       });
 
-    </script>
+</script>

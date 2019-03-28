@@ -2,25 +2,25 @@
 layout: default
 title: blog.
 ---
-
+{% assign i = 1 %}
 {%- if site.posts.size > 0 -%}
-<h1 class="text-primary">{{ page.title | default: "Posts" }}.</h1>
-<ul class="post-list">
+<h1 class="text-primary">{{ page.title | default: "Posts" }}</h1>
   {%- for post in site.posts -%}
-  <li>
-    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-    <span class="post-meta">{{ post.date | date: date_format }}</span>
-    <h3>
-      <a class="post-link" href="{{ post.url | relative_url }}">
-        {{ post.title | escape }}
-      </a>
-    </h3>
-    {%- if site.show_excerpts -%}
-      {{ post.excerpt }}
-    {%- endif -%}
-  </li>
+  <a href="{{ post.url | relative_url }}" style="text-decoration: none">
+  <div class="card border-secondary mb-4" style="max-width: 100%">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      <div class="card-header">{{ post.date | date: date_format }}</div>
+      <div class="card-body">
+        <h4 class="card-title">{{ post.title | escape }}</h4>
+        <p class="card-text">
+          {%- if site.show_excerpts -%}
+            {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
+          {%- endif -%}
+        </p>
+      </div>
+  </div>
+  </a>
   {%- endfor -%}
-</ul>
-
-<p class="feed-subscribe"><svg class="svg-icon orange"><use xlink:href="{{ '/assets/social_icons.svg#rss' | relative_url }}"></use></svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p>
+<br>
+  <p class="feed-subscribe"><i class="fab fa fa-rss white-text mr-md-5 mr-3"></i><a href="{{ "/feed.xml" | relative_url }}">subscribe.</a></p>
 {%- endif -%}

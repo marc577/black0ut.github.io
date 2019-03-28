@@ -5,6 +5,8 @@ author: black0ut
 description: ""
 #baseurl: https://blackout.dev
 google_analytics: ""
+show_excerpts: true
+excerpt_separator: <!--more-->
 
 # Build settings
 permalink: :title/
