@@ -21,7 +21,7 @@ title: projects.
               </ul>
               <div id="myTabContent" class="tab-content">
                 <div class="tab-pane fade show active" id="info">
-                    <p id="projectReadme"></p>
+                    <p id="projectReadme{{ repository.name }}"></p>
                     <a class="github-button" href="{{ repository.html_url }}/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch {{ repository.name }} on GitHub">Watch</a>
                     <a class="github-button" href="{{ repository.html_url }}" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star {{ repository.name }} on GitHub">Star</a>
                     <a class="github-button" href="{{ repository.html_url }}/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork {{ repository.name }} on GitHub">Fork</a>
@@ -29,12 +29,12 @@ title: projects.
                 </div>
                 <div class="tab-pane fade" id="files">
                     <p>
-	                    <h4 id="branchname"></h2>
-	                    <ul id="filelist"></ul>
+	                    <h4 id="branchname{{ repository.name }}"></h2>
+	                    <ul id="filelist{{ repository.name }}"></ul>
                         <script>
                                 var b0ut = new Gh3.User("marc577")
-                                  ,	branchTitle = $('#branchname')
-                                  ,	branchContents = $('#filelist');
+                                  ,	branchTitle = $('#branchname{{ repository.name }}')
+                                  ,	branchContents = $('#filelist{{ repository.name }}');
                             
                                 var repo = new Gh3.Repository("{{ repository.name }}", b0ut);
                             
@@ -65,7 +65,7 @@ title: projects.
     $.ajax({
         url: "https://raw.githubusercontent.com/{{ repository.full_name }}/master/README.md",
         success: function (data) {
-            $('#projectReadme').append(converter.makeHtml(data));
+            $('#projectReadme{{ repository.name }}').append(converter.makeHtml(data));
         }
       });
 </script>
