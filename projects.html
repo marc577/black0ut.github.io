@@ -68,18 +68,6 @@ title: projects.
             $('#projectReadme{{ repository.name }}').append(converter.makeHtml(data));
         }
       });
-</script>
-<script>
-
-    var b0ut = new Gh3.User("marc577");
-    var repo = new Gh3.Repository("{{ repository.name }}", b0ut);
-    
-    repo.fetch(function (err, res) {
-        if(err) { throw "outch ..." }
-    
-        console.log(repo);
-    });
-    
-        </script>        
+</script>     
 {% endfor %}
 <ul id="user"></ul>
