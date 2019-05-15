@@ -2,6 +2,17 @@
 layout: default
 title: projects.
 ---
+<style>
+  #proj h1 {
+    font-size: 16px;
+    }
+  #proj h2 {
+    font-size: 14px;
+    }
+  #proj h3 {
+        font-size: 12px;
+    }
+</style>
 <h1 class="text-primary">public projects.</h1>
 <script src="../assets/js/gh3.min.js"></script>
 {% assign repos = site.github.public_repositories | sort:"updated_at" | reverse %}
@@ -22,7 +33,7 @@ title: projects.
               </ul>
               <div id="myTabContent" class="tab-content">
                 <div class="tab-pane fade show active" id="info">
-                    <p class="proj" id="projectReadme{{ repository.name }}"></p>
+                    <div class="proj" id="projectReadme{{ repository.name }}"></div>
                     <a class="github-button" href="{{ repository.html_url }}/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch {{ repository.name }} on GitHub">Watch</a>
                     <a class="github-button" href="{{ repository.html_url }}" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star {{ repository.name }} on GitHub">Star</a>
                     <a class="github-button" href="{{ repository.html_url }}/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork {{ repository.name }} on GitHub">Fork</a>
