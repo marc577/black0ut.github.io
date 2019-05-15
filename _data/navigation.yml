@@ -1,8 +1,8 @@
 - title: home
   url: /
-- title: blog
-  url: /blog
 - title: projects
   url: /projects
+- title: blog
+  url: /blog
 - title: contact
   url: /contact
